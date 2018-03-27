@@ -1,0 +1,50 @@
+<div class="col-md-12 hidden-xs">
+    <h1>New Admin</h1>
+    <form method='post' action='/users'>
+
+        {{#if error}}
+            <h3 style="color: rgb(255, 60, 0)"> {{error}} </h3>
+        {{/if}}
+        {{#if success}}
+            <h3 style="color: chartreuse"> {{success}} </h3>
+        {{/if}}
+        <div class="form-group">
+            <label for="first_name" class="col-md-2 control-label">First Name</label>
+
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name" class="col-md-2 control-label">Last Name</label>
+
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email_address" class="col-md-2 control-label">Email Address</label>
+
+            <div class="col-md-10">
+                <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Email Address" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="col-md-2 control-label">Password</label>
+
+            <div class="col-md-10">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+</div>

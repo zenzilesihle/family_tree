@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var adminServices = require('../services/adminServices.js');
+var adminServices = require('../controllers/adminServices.js');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
 router.post('/',adminServices.registerAdmin);
 
 router.get('/:email',adminServices.viewAdmin);
+
+router.get('/:email',adminServices.searchAdmin);
 
 router.delete('/:email/delete',adminServices.deleteAdmin);
 
