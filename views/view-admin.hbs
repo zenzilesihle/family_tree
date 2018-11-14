@@ -1,18 +1,18 @@
 <div class="col-md-12 hidden-xs">
-    <h1>New Admin</h1>
+    <h1>Admin details</h1>
     <form method='post' action='/users'>
 
         {{#if error}}
-            <h3 id="response" style="color: rgb(255,83,54)"> {{error}} </h3>
+            <h3 id="response"  style="color: rgb(255, 60, 0)"> {{error}} </h3>
         {{/if}}
         {{#if success}}
-            <h3 style="color: #0eff00"> {{success}} </h3>
+            <h3 id="response"  style="color: chartreuse"> {{success}} </h3>
         {{/if}}
         <div class="form-group">
             <label for="first_name" class="col-md-2 control-label">First Name</label>
 
             <div class="col-md-10">
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+                <input type="text" class="form-control" id="first_name" name="first_name" value= {{adminDetails.first_name}}>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
             <label for="last_name" class="col-md-2 control-label">Last Name</label>
 
             <div class="col-md-10">
-                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                <input type="text" class="form-control" id="last_name" name="last_name" value= {{adminDetails.last_name}}>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
             <label for="email_address" class="col-md-2 control-label">Email Address</label>
 
             <div class="col-md-10">
-                <input type="email" class="form-control" id="email_address" name="email_address" placeholder="Email Address" required>
+                <input type="email" class="form-control" disabled id="email_address" name="email_address" value= {{adminDetails.email_address}} required>
             </div>
         </div>
 
@@ -42,9 +42,10 @@
 
         <div class="form-group">
             <div class="col-md-10 col-md-offset-2">
-                <button type="reset" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="reset" class="btn btn-default">Back</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </div>
         </div>
     </form>
 </div>
+

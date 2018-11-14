@@ -9,9 +9,11 @@ router.get('/', function(req, res, next) {
 
 router.post('/',adminServices.registerAdmin);
 
-router.get('/:email',adminServices.viewAdmin);
+router.post('/search',adminServices.searchAdminByName);
 
-router.get('/:email',adminServices.searchAdmin);
+router.get('/admins',adminServices.viewAdmins);
+
+router.get('/admin/:id',adminServices.viewAdminById);
 
 router.delete('/:email/delete',adminServices.deleteAdmin);
 

@@ -1,0 +1,15 @@
+<div class="col-md-12">
+    <div class="card-deck">
+
+        {{#each adminDetails}}
+            <div class="card bg-info col-md-4 col-sm-12">
+                <div class="card-body">
+                    <h5 class="card-title">{{first_name}} {{last_name}}</h5>
+                    <p class="card-text">OK</p>
+                    <a href="/users/admin/{{user_id}}" class="card-link">Another link</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+</div>
