@@ -10,13 +10,11 @@ var users = require('./routes/users');
 
 var mysql = require('mysql');
 
-var cors = require('cors')
-
 //MySQL database configuration
 var connection =     mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'Password@123',
+    password : 'admin',
 });
 
 //Create database
@@ -36,7 +34,7 @@ connection.connect(function(err){
     connection = mysql.createPool({
       host     : 'localhost',
       user     : 'root',
-      password : 'Password@123',
+      password : 'admin',
       database: 'family_tree',
     })
 
@@ -56,7 +54,7 @@ function createAdminTable(){
   var adminTable = 'CREATE TABLE IF NOT EXISTS admin'+
     '(user_id INT(70) NOT NULL AUTO_INCREMENT,'+
       'email_address VARCHAR(45) NOT NULL,'+
-      'password VARCHAR(145) NOT NULL,'+
+      'password VARCHAR(45) NOT NULL,'+
       'first_name VARCHAR(45) NOT NULL,'+
       'last_name VARCHAR(45) NOT NULL,'+
       'join_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,'+
@@ -65,21 +63,6 @@ function createAdminTable(){
 
       return adminTable;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-var hbs = require('hbs');
-hbs.registerPartials(__dirname + '/views/partials');
-
 
 
 var app = express();
@@ -98,9 +81,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-
-
-app.use(cors())
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
