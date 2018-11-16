@@ -2,6 +2,9 @@
     <h1>Login</h1>
     <form method='post' action='/login'>
 
+        {{#if failLogin}}
+            <h4 style="color: #ffb339"> {{{failMessage}}} </h4>
+        {{/if}}
         <div class="form-group">
             <label for="email_address" class="col-md-2 control-label">Email Address</label>
             <div class="col-md-10">
