@@ -10,10 +10,12 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
 
+            {{#if logged}}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Administration
                 </a>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/admin">Add Admin</a>
                     <a class="dropdown-item" href="/users/admins">View Admins</a>
@@ -21,9 +23,10 @@
                     <a class="dropdown-item" href="/users/admin/3">View Admin</a>
                 </div>
             </li>
+            {{/if}}
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
+                <a class="nav-link" href="/login">Login</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method='post' action='/users/search'>
